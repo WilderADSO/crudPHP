@@ -13,6 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         case 'modalAdd':
             include './vistas/modaladdproducto.php';
             break;
+        case 'modalActualizar':
+                if (isset($_GET['id'])) {
+                    $controladorProducto->mostrarFormularioActualizarProducto($_GET['id']);
+                }
+            break;
 
     }
 
@@ -27,6 +32,11 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
         case 'agregar_producto':
             $controladorProducto->agregarProducto();
             break;
+         case 'actualizar_producto':
+                if (isset($_GET['id'])) {
+                    $controladorProducto->actualizarProducto($_GET['id']);
+                }
+             break;
 
     }
 
