@@ -38,5 +38,17 @@ public function actualizarProducto(int $id, string $nombre, int $stock, float $p
         exit("Error al actualizar el producto: " . $e->getMessage());
     }
 }
+
+
+// Modelo para Eliminar UN producto en la BD por su ID
+public function eliminarProducto(int $id): bool {
+    try {
+        $statement = $this->conexion->prepare("DELETE FROM productos WHERE id = ?");
+        return $statement->execute([$id]);
+    } catch (PDOException $e) {
+        exit("Error al eliminar el producto: " . $e->getMessage());
+    }
+}
+
 }
 ?>
