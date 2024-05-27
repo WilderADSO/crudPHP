@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="publico/stilosA.css">
+
 <?php
 
 require_once 'configuracion/conexion.php';
